@@ -1,0 +1,3 @@
+-- fill the table  with meta information
+-- Note: if the below copy statement does not work, make sure to fill in the complete path to the csv file (see the path after the FROM statement)
+copy efsa.column_metainfo (id, columnname, descr_sdd2, descr_sdd1, sample_measurement, datatype, catalogue) FROM '06. Meta data/meta-info from DB.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8' QUOTE '\"' ESCAPE '''';""

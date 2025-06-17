@@ -1,0 +1,276 @@
+id,columnname,descr_sdd2,descr_sdd1,sample_measurement,datatype,catalogue
+1,analysisy,year when the analysis was completed.,year of analysis,s,"number(4,0)",0
+2,progtype,"indicate the type of programme for which the samples have been collected (national, eu programme, total diet study, control and eradication programme).",type of sampling program,s,text(400),prgtyp
+3,restype,"indicate the type of result, whether it could be quantified/determined or not.",type of result,m,text(400),valtyp
+4,resunit,"unit of measurement for the values reported in ‘result lod’, ‘result loq’, ‘resllwr’, ‘resulwr’, ‘cc alpha’, ‘cc beta’, ‘result value’, ‘result value uncertainty standard deviation, ‘result value uncertainty’, ‘limit for the result evaluation’ and ‘limit for the result evaluation (high limit)’.",result unit,m,text(400),unit
+5,sampcountry,country where the sample was taken for laboratory testing (iso 3166-1-alpha-2).,country of sampling,s,text(400),country
+6,samppoint,"point, in the food chain, where the sample was taken. (see doc. estat/f5/es/155 “data dictionary of activities of the establishments”).",sampling point,s,text(400),sampnt
+7,sampy,year of sampling. in case the sampling has been performed over a period of time the start date (as year) of sampling should be reported.,year of sampling,s,"number(4,0)",0
+8,origcountry,country of origin of the sample taken (iso 3166-1-alpha-2 country code).,country of origin of the product,s,text(400),country
+9,labaccred,the accreditation status of the laboratory and its reference procedure.,laboratory accreditation,s,text(400),labacc
+10,proglegalref,"reference to the legislation for the programme defined by programme code. reference to the legislation on what to sample, how to evaluate the sample etc.",programme legal  reference,s,text(400),legref
+11,sampm,month of sampling. in case the sampling has been performed over a period of time the start date (as month) of sampling should be reported.,month of sampling,s,"number(2,0)",0
+12,sampd,day of sampling. in case the sampling has been performed over a period of time the start date (as day) of sampling should be reported.,day of sampling,s,"number(2,0)",0
+13,paramtype,"define if the parameter reported is an individual residue/ analyte, a summed residue definition or part of a summed residue definition.",type of parameter,m,text(400),paramtyp
+14,accredproc,the accreditation status of the analytical method used and its reference procedure.,accreditation procedure for the analytical method,m,text(400),mdacc
+15,resloq,limit of quantification expressed in the unit specified by the element ‘result unit’.,result loq,m,"number(20,10)",0
+16,labcountry,country where the laboratory is located (iso 3166-1-alpha-2).,laboratory country,s,text(400),country
+17,sampmethod,reference to the method for sampling (e.g. eu legislation).,sampling method,s,text(400),sampmd
+18,anmethrefid,identifier for the method used in the laboratory.,,m,text(50),0
+19,anmethtype,type of analytical method used.,,m,text(400),anlytyp
+20,evalcode,"evaluation of the result. if the result exceeds a limit specified above or contains the evaluation on sampling event, sample taken, or sample analysed as indicated by evallowlimit (n.01).",,m,text(400),reseval
+21,paramcodebaseparam,encoding of the isolate parameter according to the param catalogue. it is used to report the speciation or serotyping of the isolate.,,m,text(400),param
+22,progid,unique identification code of the programme or project for which the sampling unit was taken.,,s,text(100),0
+23,resid,identification code of an analytical result (a row of the data table) in the transmitted file. the result identification code must be maintained at organisation level and it will be used in further updated/deletion operation from the senders.,,m,text(100),0
+24,sampanid,"identification code of the analysed sample, by default the same as the sampid.",,s,text(100),0
+25,sampeventid,"unique identification of the sampling event. the entity representing the sampling unit extracted at certain time from the sampled population, whose chemical or microbiological properties are the target of the sampling.",,s,text(100),0
+26,sampid,identification code of the sample taken.,,s,text(100),0
+27,sampmatcodebasebuilding,hierarchy serving as a master for the management of all the terms contributed by the different domains.,,s,text(400),mtx
+28,sampstrategy,sampling strategy describe how the sample was selected (ref. eurostat - typology of sampling strategy performed in the programme or project identified by programme code (e.g. objective and selective sampling)).,,s,text(400),sampstr
+29,anmethcodebasemeth,encoding of the method or instrument used from the anlymd catalogue.,,m,text(400),anlymd
+30,anmatcodebasebuilding,hierarchy serving as a master for the management of all the terms contributed by the different domains.,,s,text(400),mtx
+31,sampler,define which organisation (private or public) is performing the sample.,,s,text(400),samplr
+32,anmatcodepart,this facet describes the nature of the food item or the part of plant or animal it represents. the information brought by this facet is very often implicitly included in the food list groups.,,s,text(400),mtx
+33,sampmatcodepart,this facet describes the nature of the food item or the part of plant or animal it represents. the information brought by this facet is very often implicitly included in the food list groups.,,s,text(400),mtx
+34,sampinfoorigsampid,"link to the the original sample taken expressed with its sampid, i.e. the sample for which a non compliancy required a follow-up sampling",,s,text(100),0
+35,sampmatcodesource,"this facet describes the plant, animal, other organism or other source from which a raw primary commodity (rpc) has been obtained. the information brought by this facet is very often implicitly included in the food list groups.",,s,text(400),mtx
+36,anmatcodesource,"this facet describes the plant, animal, other organism or other source from which a raw primary commodity (rpc) has been obtained. the information brought by this facet is very often implicitly included in the food list groups.",,s,text(400),mtx
+37,exprrestype,"code to describe how the result has been expressed: whole weight, fat weight, dry weight, etc.",,m,text(400),exprres
+38,sampmatcoderacsource,"this facet describes the rpc from which an ingredient or derivative has been obtained. the information brought by this facet is very often implicitly included in the food list groups. in most cases a rpc has only one raw source. however, in some food groups, like cheeses or fruit juices, products of the same nature of the ones from one raw source, but from mixed raw sources are encountered.",,s,text(400),mtx
+226,isolparamcodeag,"this attribute is to describe adhesion gene for vtec, more than one value can be provided.",,s,text(400),param
+39,anmatcoderacsource,"this facet describes the rpc from which an ingredient or derivative has been obtained. the information brought by this facet is very often implicitly included in the food list groups. in most cases a rpc has only one raw source. however, in some food groups, like cheeses or fruit juices, products of the same nature of the ones from one raw source, but from mixed raw sources are encountered.",,s,text(400),mtx
+40,labsampcode,,laboratory sample code,s,text(20),0
+41,paramcode,,parameter code,m,text(400),param
+42,prodcode,,product code,s,text(400),matrix
+43,prodprodmeth,,method of production,s,text(400),prodmd
+44,prodtreat,,product treatment,s,text(400),prodtr
+45,progsampstrategy,,sampling strategy,s,text(400),sampstr
+46,resevaluation,,evaluation of the result,m,text(400),reseval
+47,resultcode,,result code,m,text(40),0
+48,analysism,month when the analysis was completed.,month of analysis,s,"number(2,0)",0
+49,lang,,language,s,text(400),lang
+50,localorgcountry,country where the local organisation is placed. (iso 3166-1-alpha-2 country code).,local organisation country,s,text(400),country
+51,sampmattype,"type of sample taken (e.g. food, food stimulants, animal, feed, environment; food contact material), identifying the sub-domain of the matrix catalogue to be used.",,s,text(400),mtxtyp
+52,analysisd,day when the analysis was completed.,day of analysis,s,"number(2,0)",0
+53,anmethtext,"description of the method or instrument using free text, particularly if ‘other’ was reported for ‘analytical method code’.",analytical method text,m,text(250),0
+54,resvalreccorr,define if the result value has been corrected for recovery.,result value corrected for recovery,m,text(400),yesno
+55,reslod,limit of detection expressed in the unit specified by the element ‘result unit’.,result lod,m,"number(20,10)",0
+56,sampunittype,"define the type of sampling unit taken in this event: a batch, an animal, a flock, a herd, etc.",,s,text(400),sampuntyp
+57,evallimittype,"type of legal limit used to evaluate the result. ml, mrpl, mrl, action limit, cut-off value etc.",,m,text(400),lmttyp
+58,resqualvalue,this field should be completed only if the result value is qualitative e.g. positive/ present or negative/ absent. in this case the element ‘result value’ should be left blank.,result qualitative value,m,text(400),posneg
+59,sampmatcodeprocess,"this facet allows recording different characteristics of the food: preservation treatments a food item underwent, technological steps or treatments applied while producing a food item, the way a food item has been heat treated before consumption and the way a food item has been prepared for final consumption (particularly needed for consumption surveys and includes preparation (like battering or breading) as well as heat treatment steps).",,s,text(400),mtx
+60,anmatcodeprocess,"this facet allows recording different characteristics of the food: preservation treatments a food item underwent, technological steps or treatments applied while producing a food item, the way a food item has been heat treated before consumption and the way a food item has been prepared for final consumption (particularly needed for consumption surveys and includes preparation (like battering or breading) as well as heat treatment steps).",,s,text(400),mtx
+61,anmethcode,,analytical method code,m,text(400),anlymd
+62,repyear,the year the reported data refer to.,,s,"number(4,0)",0
+63,acttakencode,describe any follow-up actions taken as a result higher than the legal limit.,action taken,m,text(400),action
+64,repcountry,the country the reported data refer to (iso 3166-1-alpha-2).,,s,text(400),country
+65,resval,the result of the analytical measure expressed in the unit specified by the element ‘result unit’.,result value,m,"number(20,10)",0
+66,prody,,year of production,s,"number(4,0)",0
+67,prodd,,day of production,s,"number(2,0)",0
+68,prodm,,month of production,s,"number(2,0)",0
+69,anmethrefcode,"when validated methods are used, the official reference code should be provided.",analytical method reference code,m,text(400),anlyrefmd
+70,reslegallimittype,,type of legal limit,m,text(400),lmttyp
+71,progcode,,sampling programme code,s,text(20),0
+72,exprres,,expression of result,m,text(400),exprres
+73,ccbeta,cc beta value (detection capability) expressed in the unit specified by the element ‘result unit’.,cc beta,m,"number(20,10)",0
+74,reslc,,,m,text,
+75,resvalllb,,,m,text,
+76,resvallmb,,,m,text,
+77,resvallub,,,m,text,
+78,sampmatcode_l1,,,s,text,
+79,sampmatcode_l10,,,s,text,
+80,sampmatcode_l2,,,s,text,
+81,sampmatcode_l3,,,s,text,
+82,sampmatcode_l4,,,s,text,
+83,sampmatcode_l5,,,s,text,
+84,sampmatcode_l6,,,s,text,
+85,sampmatcode_l7,,,s,text,
+86,sampmatcode_l8,,,s,text,
+87,sampmatcode_l9,,,s,text,
+88,sampmatcode_last,,,s,text,
+89,anmatcode_desc,,,s,text,
+90,sampmatcode_desc,,,s,text,
+91,anmatcode_l1,,,s,text,
+92,anmatcode_l10,,,s,text,
+93,anmatcode_l2,,,s,text,
+94,anmatcode_l3,,,s,text,
+95,anmatcode_l4,,,s,text,
+96,anmatcode_l5,,,s,text,
+97,anmatcode_l6,,,s,text,
+98,anmatcode_l7,,,s,text,
+99,anmatcode_l8,,,s,text,
+100,anmatcode_l9,,,s,text,
+101,anmatcode_last,,,s,text,
+102,expiryd,,day of expiry,s,"number(2,0)",0
+103,expirym,,month of expiry,s,"number(2,0)",0
+104,expiryy,,year of expiry,s,"number(4,0)",0
+105,sampmatcodeprod,"the facet production method describes the method used to produce the food. it is mainly applicable for animals and for foods from plant and of animal origin. this facet should only be used in case of raw foods and ingredients (not for composite foods). more than one descriptor can be applied to each entry, provided they are not contradicting each other (e.g. domesticated and wild).",,s,text(400),mtx
+152,sampmatcodepackmat,"this facet is used for packaged food and allows recording the material constituting the packaging containing the food. in case of combined material, it describes all the material, not only the part in contact with food. only one descriptor for this facet may be used for each entry.",,s,text(400),mtx
+106,anmatcodeprod,"the facet production method describes the method used to produce the food. it is mainly applicable for animals and for foods from plant and of animal origin. this facet should only be used in case of raw foods and ingredients (not for composite foods). more than one descriptor can be applied to each entry, provided they are not contradicting each other (e.g. domesticated and wild).",,s,text(400),mtx
+107,sampinfoarrivaly,year of arrival in the laboratory in the format yyyy.,,s,"number(4,0)",0
+108,sampinfoarrivald,day of arrival in the laboratory in the format dd.,,s,"number(2,0)",0
+109,sampinfoarrivalm,month of arrival in the laboratory in the format mm.,,s,"number(2,0)",0
+110,sampsizeunit,unit in which the size/amount of the sample is expressed.,,s,text(400),unit
+111,anportseq,"sequence number (e.g. 1, 2, 3) reflecting the sample analysed portion actually under analysis. the default value is 1.",,s,text(100),0
+112,sampunitsizeunit,it contains the unit in which the sampling unit size is expressed.,,s,text(400),unit
+113,labsubsampcode,,laboratory sub-sample code,s,"number(4,0)",0
+114,resvalrec,recovery value associated with the concentration measurement expressed as a percentage (%). i.e. report 100 for 100 %.,result value recovery,m,"number(20,10)",0
+115,sampunitsize,it contains the size/amount of the sampling unit.,,s,"number(20,10)",0
+116,efsaprodcode,,efsa product code,s,text(400),foodex
+117,ccalpha,cc alpha value (decision limit) expressed in the unit specified by the element ‘result unit’.,cc alpha,m,"number(20,10)",0
+118,evallowlimit,"report the reference or legal limit, limit or cut-off value for the parameter/analyte for the relevant matrix or the lower level of three-class evaluation limit analyte. it is expressed in the unit specified by the element “result unit”.",,m,"number(20,10)",0
+119,sampmatcodetargcon,"this facet allows recording different consumer classes intended as target for the food item.  for laboratory uses when reporting analyses for feed, a list or target animals is also included. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+120,anmatcodetargcon,"this facet allows recording different consumer classes intended as target for the food item.  for laboratory uses when reporting analyses for feed, a list or target animals is also included. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+121,sampmatinfoexpirym,month of expiry.,,s,"number(2,0)",0
+122,sampmatinfoexpiryy,year of expiry.,,s,"number(4,0)",0
+123,sampmatinfoexpiryd,day of expiry.,,s,"number(2,0)",0
+124,sampsize,total size/amount of the sample.,,s,"number(20,10)",0
+125,evalinfosamptkasses,sample taken assessment.,,m,text(400),reseval
+126,sampeventinfoslaughterd,day of slaughtering in the format dd.,,s,"number(2,0)",0
+127,sampeventinfoslaughterm,month of slaughtering in the format mm.,,s,"number(2,0)",0
+128,sampeventinfoslaughtery,year of slaughtering in the format yyyy.,,s,"number(4,0)",0
+129,proccountry,country where the food was processed (iso 3166-1-alpha-2).,country of processing,s,text(400),country
+130,resvaluncert,indicate the expanded uncertainty value (usually 95% confidence interval) associated with the measurement expressed in the unit reported in the field ‘result unit’.,result value uncertainty,m,"number(20,10)",0
+131,sampmatinfoprodd,day of production.,,s,"number(2,0)",0
+132,sampmatinfoprodm,month of production.,,s,"number(2,0)",0
+133,sampmatinfoprody,year of production.,,s,"number(4,0)",0
+134,reslegallimit,,legal limit for the result,m,"number(20,10)",0
+135,sampaninfocompd,if the analysis has been performed over a period of time the completion day of analysis should be stated in this field.,,s,number(2),0
+136,sampaninfocompm,if the analysis has been performed over a period of time the completion month of analysis should be stated in this field.,,s,number(2),0
+137,sampaninfocompy,if the analysis has been performed over a period of time the completion year of analysis should be stated in this field.,,s,number(4),0
+138,isolinfoarrivaldisol,day of the arrival of the isolate in the laboratory.,,s,"number(2,0)",0
+139,isolinfoarrivalmisol,month of the arrival of the isolate in the laboratory.,,s,"number(2,0)",0
+140,isolinfoarrivalyisol,year of the arrival of the isolate in the laboratory.,,s,"number(4,0)",0
+141,isolinfoisold,day when the isolate was identified.,,s,"number(2,0)",0
+142,isolinfoisolm,month when the isolate was identified.,,s,"number(2,0)",0
+143,isolinfoisoly,year when the isolate was identified.,,s,"number(4,0)",0
+144,resrefid,,,m,text,
+145,exprrespercfatperc,percentage of fat in the analysed sample.,,m,"number(20,10)",0
+146,anmatcodequal,"this facet provides some principal claims related to important nutrients-ingredients, like fat, sugar etc. it is not intended to include health claims or similar. the present guidance provides a limited list, to be eventually improved during the evolution of the system. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+147,sampmatcodequal,"this facet provides some principal claims related to important nutrients-ingredients, like fat, sugar etc. it is not intended to include health claims or similar. the present guidance provides a limited list, to be eventually improved during the evolution of the system. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+148,anmatcodestate,this facet describes the form (physical aspect) of the food as reported by the consumer (as estimated during interview or as registered in the diary) (consumption data) or as expressed in the analysis results in the laboratory (occurrence data).,,s,text(400),mtx
+149,sampmatcodestate,this facet describes the form (physical aspect) of the food as reported by the consumer (as estimated during interview or as registered in the diary) (consumption data) or as expressed in the analysis results in the laboratory (occurrence data).,,s,text(400),mtx
+150,anmatcodepartcon,"when reporting food analysed or consumed, this facet allows specifying in which form the food item was analysed or consumed. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+151,sampmatcodepartcon,"when reporting food analysed or consumed, this facet allows specifying in which form the food item was analysed or consumed. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+153,anmatcodepackmat,"this facet is used for packaged food and allows recording the material constituting the packaging containing the food. in case of combined material, it describes all the material, not only the part in contact with food. only one descriptor for this facet may be used for each entry.",,s,text(400),mtx
+154,samplenum,,number of samples,s,"number(10,0)",0
+155,anmatcodeingred,"this facet collects ingredients and/or flavour note. regarding ingredients this facet serves the purpose of providing information on ingredients of a composite food being important from some point of view, like allergic reactions, hazards, but also aspect, taste.",,s,text(400),mtx
+156,sampmatcodeingred,"this facet collects ingredients and/or flavour note. regarding ingredients this facet serves the purpose of providing information on ingredients of a composite food being important from some point of view, like allergic reactions, hazards, but also aspect, taste.",,s,text(400),mtx
+157,evalinforesultassess,,,m,text,
+158,anmatcodegender,"this facet allows recording the status of an animal or animal group, with respect to sex. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+159,sampmatcodegender,"this facet allows recording the status of an animal or animal group, with respect to sex. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+160,prodpack,,packaging,s,text(400),prodpac
+161,anportsizeunit,unit in which the size of the sample analysed portion is expressed.,,s,text(400),unit
+162,lotsizeunit,,lot size unit,s,text(400),unit
+163,exprrespercmoistperc,percentage of moisture in the analysed sample.,,m,"number(20,10)",0
+164,lotsize,,lot size,s,"number(20,10)",0
+165,anportsize,"size / amount of the sample analysed portion, i.e. amount of sample weight for analysis (weight of test portion).",,s,"number(20,10)",0
+166,evalinfosampeventasses,sampling event assessment.,,m,text(400),reseval
+167,anmatcodegen,this facet allows recording whether the food list code was chosen because of lack of information on the food item or because the proper entry in the food list was missing. only one descriptor from this facet can be added to each entry.,,s,text(400),mtx
+168,sampmatcodegen,this facet allows recording whether the food list code was chosen because of lack of information on the food item or because the proper entry in the food list was missing. only one descriptor from this facet can be added to each entry.,,s,text(400),mtx
+169,anmatcodeanimage,"this facet allows recording the classes of the animal used in legislation or in the practice, based on age or development stage. more than one descriptor can be applied to each entry, provided they are not contradicting each other..",,s,text(400),mtx
+170,sampmatcodeanimage,"this facet allows recording the classes of the animal used in legislation or in the practice, based on age or development stage. more than one descriptor can be applied to each entry, provided they are not contradicting each other..",,s,text(400),mtx
+171,sampmatcodepackformat,this facet is used for packaged food and allows recording the container or wrapping form. only one descriptor from this facet can usually be added to each entry.,,s,text(400),mtx
+172,anmatcodepackformat,this facet is used for packaged food and allows recording the container or wrapping form. only one descriptor from this facet can usually be added to each entry.,,s,text(400),mtx
+173,resinfonotsummed,,,m,text,
+174,sampmatcodelegis,this facet allows recording the food additives classes as reported in the legislation in order. only one descriptor from this facet can be added to each entry.,,s,text(400),mtx
+175,anmatcodelegis,this facet allows recording the food additives classes as reported in the legislation in order. only one descriptor from this facet can be added to each entry.,,s,text(400),mtx
+176,sampeventinfoslaughtercountry,country of slaughtering.,,s,text(400),country
+177,anmatcodeuse,"this facet allows recording the intended use of a food item, in particular with respect to further treatment expected (or not expected) before consumption. only one descriptor from this facet can be added to each entry.",,s,text(400),mtx
+178,sampmatcodeuse,"this facet allows recording the intended use of a food item, in particular with respect to further treatment expected (or not expected) before consumption. only one descriptor from this facet can be added to each entry.",,s,text(400),mtx
+179,anmethinfocom,additional information on the analytical method depending on specific requirements of the different data collection domains.,,m,text(1000),0
+180,sampeventinfobirthcountry,country of birth of the animal.,,s,text(400),country
+181,resulwr,upper limit of the working range expressed in the unit specified by the element ‘result unit’.,,m,"number(20,10)",0
+182,anmatcodefat,"this is a facet with numerical descriptors, to allow providing the fat content (as percentage w/w) of a food item. only one descriptor from this facet can be added to each entry.",,s,text(400),mtx
+183,sampmatcodefat,"this is a facet with numerical descriptors, to allow providing the fat content (as percentage w/w) of a food item. only one descriptor from this facet can be added to each entry.",,s,text(400),mtx
+184,evalinfoconclusion,conclusion of follow-up investigation,,m,text(400),conclus
+185,evalinfosampanasses,sample analysed assessment.,,m,text(400),reseval
+186,sampanreftime,"define the time at which the sample was analysed e.g.  ‘analysed at arrival to the laboratory’, ‘analysed at the end of shelf-life’ (according to european legislation on microbiological criteria reg. 2073/2005).",,s,text(400),reftm
+187,anmatcodemedium,"this facet is intended for food packed in any container, together with any additional (usually fluid) medium. not to be used to define an aggregated composite. this facet is needed to allow understanding the chemically/microbiologically relevant condition of the food (intended as the food surrounded by the medium).",,s,text(400),mtx
+188,sampmatcodemedium,"this facet is intended for food packed in any container, together with any additional (usually fluid) medium. not to be used to define an aggregated composite. this facet is needed to allow understanding the chemically/microbiologically relevant condition of the food (intended as the food surrounded by the medium).",,s,text(400),mtx
+189,anmatcodefpurpose,"this facet allows recording the purpose of farming, keeping or breeding (e.g. milk production, egg production). more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+225,isolid,identification code used to group an isolate identification with antimicrobial susceptibility tests performed on the same isolate.,,s,text(100),0
+190,sampmatcodefpurpose,"this facet allows recording the purpose of farming, keeping or breeding (e.g. milk production, egg production). more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+191,fatperc,,percentage of fat in the original sample,s,"number(20,10)",0
+192,resvaluncertsd,standard deviation for the uncertainty of measurement.,result value uncertainty standard deviation,m,"number(20,10)",0
+193,moistperc,,percentage of moisture in the original sample,s,"number(20,10)",0
+194,anmatcodefort,"this facet allows providing information on the added ingredient(s) used to fortify a food item. the descriptors of this facet are taken from a selected small subset of the food list. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+195,sampmatcodefort,"this facet allows providing information on the added ingredient(s) used to fortify a food item. the descriptors of this facet are taken from a selected small subset of the food list. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+196,anmatcodecookext,"this facet describes the intensity of heat treatment having been applied to a food item in the categories meat, fish-seafood, vegetables, eggs, bread and similar. only one descriptor from this facet can be added to each entry, apart from the specification “meat/fish/bakery/vegetables: presence of burned spots-parts”.",,s,text(400),mtx
+197,sampmatcodecookext,"this facet describes the intensity of heat treatment having been applied to a food item in the categories meat, fish-seafood, vegetables, eggs, bread and similar. only one descriptor from this facet can be added to each entry, apart from the specification “meat/fish/bakery/vegetables: presence of burned spots-parts”.",,s,text(400),mtx
+198,anmatcodesweet,"this facet allows providing information on the added ingredient(s) used to impart sweetness to a food item. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+199,sampmatcodesweet,"this facet allows providing information on the added ingredient(s) used to impart sweetness to a food item. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+200,anmatcodedough,"this facet is proposed to provide information on the original dough-mass, for bakery products. the descriptors for this facet are taken from a selected subset of the food list. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+201,sampmatcodedough,"this facet is proposed to provide information on the original dough-mass, for bakery products. the descriptors for this facet are taken from a selected subset of the food list. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+202,exprrespercalcoholperc,percentage of alcohol in the analysed sample.,,m,"number(20,10)",0
+203,anmatcodealcohol,"this is a facet containing information from the food label.this is a facet with numerical descriptors, to allow providing the alcohol (ethanol) content (as percentage v/v) of a food item. the european union follows recommendations of the international organization of legal metrology (oiml).",,s,text(400),mtx
+204,sampmatcodealcohol,"this is a facet containing information from the food label.this is a facet with numerical descriptors, to allow providing the alcohol (ethanol) content (as percentage v/v) of a food item. the european union follows recommendations of the international organization of legal metrology (oiml).",,s,text(400),mtx
+205,anmatcodereplev,"this facet allows recording classes of animals from the point of view of reproduction. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+206,sampmatcodereplev,"this facet allows recording classes of animals from the point of view of reproduction. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+207,anmatcodeplace,this facet allows recording the place where the food was prepared for consumption. only one descriptor from this facet can be added to each entry.,,s,text(400),mtx
+208,sampmatcodeplace,this facet allows recording the place where the food was prepared for consumption. only one descriptor from this facet can be added to each entry.,,s,text(400),mtx
+209,evalhighlimit,report the higher legal limit of the analyte for the three-class evaluation limit analyte. it is expressed in the unit specified by the element “result unit”.,,m,"number(20,10)",0
+210,anmatcoderiskingred,"this facet (of specific interest in the microbiological domain) allows recording the presence of microbiologically high-risk ingredients. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+211,prodingred,,ingredients,s,text(250),0
+212,sampmatcoderiskingred,"this facet (of specific interest in the microbiological domain) allows recording the presence of microbiologically high-risk ingredients. more than one descriptor can be applied to each entry, provided they are not contradicting each other.",,s,text(400),mtx
+213,anmethinfo,,,m,text,
+214,anmethcodesampintro,sample introduction,,m,text(400),anlymd
+215,anmethinfocontacttempc,the contact temperature represents the temperature of the bath in which both the packaging material and the simulant are contained (as °c).,,m,"number(20,10)",0
+216,anmethinfocontacttimemin,the contact time represents the length of the exposition of the food packaging to a food stimulant (in minutes).,,m,"number(20,10)",0
+217,anmethinfodiskconc,substance concentration in the disk used for the diffusion method (expressed in micrograms).,,m,"number(20,10)",0
+218,anmethinfodiskdiam,diameter of the disk used in the diffusion method (expressed in mm).,,m,"number(20,10)",0
+219,anmethinfomethsensitivity,sensitivity of the analytical method.,,m,"number(5,2)",0
+220,anmethinfomethspecificity,specificity of the analytical method.,,m,"number(5,2)",0
+221,efsaparamcode,,efsa parameter code,m,text(250),0
+222,evalinfosyntestasses,it allows mss to report the outcome of a synergy test performed to detect certain ?-lactam resistant phenotypes.,,m,text(400),posneg
+223,evalinfotseindexcase,this attribute indicates whether the case has been confirmed in a flock/herd currently not under intensified tse monitoring according to chapter b annex vii of the tse regulation.,,m,catalogue(400),yesno
+224,evalinfotsenationalcaseid,the national case number/unique case identifier for each confirmed (positive or inconclusive) case as stored and maintained in the ms database. the national case number is to be provided by the data provider.,,m,text(100),0
+227,isolparamcodeampc,"ampc genotype in isolates of salmonella and e. coli through enzyme formulas (e.g. cmy-2, aac-1).",,s,text(400),param
+228,isolparamcodeanth,this attribute is to list of h-antigen for vtec,,s,text(400),param
+229,isolparamcodebaseparam,encoding of the isolate parameter according to the param catalogue. it is used to report the speciation or serotyping of the isolate.,,s,text(400),param
+230,isolparamcodecarbapenem,"carbapenemase genotype in isolates of salmonella and e. coli through enzyme formulas (e.g. kpc, oxa-48).",,s,text(400),param
+231,isolparamcodecc,this attribute is to specify clonal complex number for mrsa terms,,s,"number(10,0)",0
+232,isolparamcodeesbl,"esbl genotype in isolates of salmonella and e. coli through enzyme formulas (e.g. tem-52, shv-2, ctx-m-1).",,s,text(400),param
+233,isolparamcodest,this attribute is to describe mlst (multi locus sequence) number for mrsa terms,,s,"number(10,0)",0
+234,isolparamcodet,this attribute is to specify spa-type number for mrsa terms,,s,"number(10,0)",0
+235,isolparamcodevt,"this attribute is to describe verotoxin geno-phenotype for vtec, more than one value can be provided.",,s,text(400),param
+236,isolparamtext,description of the isolate parameter (e.g. speciation/ serotyping) using free text.,,s,text(250),0
+237,labinfolabtotisol,this is a numerical data element which should be left empty if unknown. it is the total number of isolates available in the laboratory testing for amr for the specific bacterial species or serovar in relation to the given matrix.,,s,"number(10,0)",0
+238,paramcodeag,"this attribute is to describe adhesion gene for vtec, more than one value can be provided.",,m,text(400),param
+239,paramcodeallele,this facet describes the genotype allele.,,m,text(400),0
+240,paramcodeampc,"ampc genotype in isolates of salmonella and e. coli through enzyme formulas (e.g. cmy-2, aac-1).",,m,text(400),param
+241,paramcodeanth,this attribute is to list of h-antigen for vtec,,m,text(400),param
+242,paramcodecarbapenem,"carbapenemase genotype in isolates of salmonella and e. coli through enzyme formulas (e.g. kpc, oxa-48).",,m,text(400),param
+243,paramcodecc,this attribute is to specify clonal complex number for mrsa terms,,m,"number(10,0)",0
+244,paramcodeesbl,"esbl genotype in isolates of salmonella and e. coli through enzyme formulas (e.g. tem-52, shv-2, ctx-m-1).",,m,text(400),param
+245,paramcodeexptype,0,,m,catalogue(400),param
+246,paramcodest,this attribute is to describe mlst (multi locus sequence) number for mrsa terms,,m,"number(10,0)",0
+247,paramcodet,this attribute is to specify spa-type number for mrsa terms,,m,"number(10,0)",0
+248,paramcodevt,"this attribute is to describe verotoxin geno-phenotype for vtec, more than one value can be provided.",,m,text(400),param
+249,proginfoaffectedherds,"it specifies the number of clinically affected herds fulfilling the definitions given in the report on ‘development of harmonised schemes for the monitoring and reporting of q-fever in animals in the european union’ (sidi-boumedine et al., 2010).",,s,"number(10,0)",0
+250,proginfoamrprog,it identifies the basis of the programme if the framework of which the sample/isolate has been collected/analysed in routine for monitoring of antimicrobial resistance in line with the decision 2013/652/eu.,,s,text(400),amrprog
+251,proginfocontrflocks,number of flocks/herds under the control programme.,,s,"number(10,0)",0
+252,proginforasffnotifref,"this variable is optional. in case the context in the field ‘programme type’ (progtype) is set as ‘rasff alert notification’, this element can be used for reporting the number of the rapid alert system for food and feed (rasff) notification, if available.",,s,text(50),0
+253,proginfotargetverif,information if the data are used for the verification of the salmonella reduction target.,,s,text(400),yesno
+254,proginfototsamplesinconclusive,it is the total number of samples/animals evaluated as inconclusive.,,s,number(10),0
+255,proginfototsamplesnegative,it is the total number of samples/animals evaluated as negative.,,s,number(10),0
+256,proginfototsamplespositive,"this data element is an integer numerical data element. it is the total number of samples tested positive (i.e. individual swabs or single items in a batch) for the zoonotic agent from a given matrix and sampling context, in order to collect the bacterial isolates tested for antimicrobial susceptibility from a specific ms during the whole reporting year of the amr monitoring programme. the matrix may be an animal (e.g. broilers, laying hens, fattening pigs, calves < 1 year (level 2)) or a food category. please note that the same number for all isolates coming from the same sampling context should be reported so that data deriving from clinical investigations, for example, are not mixed with data deriving from epidemiological monitoring of amr. these data may be used to assess the prevalence of resistant bacteria, and each value should be less than or equal to the total number of samples tested.",,s,"number(10,0)",0
+257,proginfototsamplestested,"this data element is an integer numerical data element. it is the total number of samples tested (i.e. individual swabs or single items in a batch) for the presence of the zoonotic agent from a given matrix and sampling context—whether positive or negative—in order to collect the bacterial isolates tested for antimicrobial susceptibility from a specific ms during the whole reporting year of the amr monitoring programme. the matrix may be an animal (e.g. broilers, laying hens, fattening pigs, calves < 1 year (level 2)) or a food category. these data may be used to assess the prevalence of resistant bacteria. please note that the same number for all isolates coming from the same sampling context should be reported, so that data deriving from clinical investigations, for example, are not mixed with data deriving from epidemiological monitoring of amr.",,s,"number(10,0)",0
+258,proginfototsamplesunsuitable,it is the total number of samples which were not suitable for the analysis and the evaluation.,,s,number(10),0
+259,proginfototunitspositive,"this data element is strongly recommended to report the information for the samples taken based on decision 2013/652/eu. it is an integer numerical data element. it is the total number of epidemiological units of interest (e.g. animal, flock, herd, slaughter batch, single, batch) investigated in relation to a given matrix, and tested positive for a bacterial species, during the whole reporting year exercise of the amr monitoring programme. these data may be used to assess the prevalence of resistant bacteria. please note that the same number should be reported for all isolates coming from the same monitoring context.",,s,"number(10,0)",0
+260,proginfototunitstested,"this is a numerical field. it means the total number of biological samples investigated (e.g. carcass, fresh meat, faeces), within a specific reporting ms, for the presence of specific bacterial species, strains or serovars. samples may test positive or negative to the specific bacterial species, strain or serovar.",,s,"number(10,0)",0
+261,proginfotsetargetgroup,"this attribute describes the type of group of animals sampled according to the definition of target groups as laid down in article 6 and 12, and chapter 1. ii of annex iii of the tse regulation.",,s,catalogue(400),targetgroup
+262,resinfomlvaprofile,"this element should be completed when reporting the results of mlva analysis (e.g., for salmonella typhimurium). it is a free text field and provides the vector of the number of repeat units at each locus (e.g., mlvaprofile=8-11-na-na-211).",,m,text(50),0
+263,resinfopercc,binary list to record whether determination of clonal complex for mrsa isolate has been performed through laboratory experiments (yes) or has been inferred from e.g. online databases (no).,,m,text(400),yesno
+264,resinfopermlst,binary list to record whether determination of mlst type for mrsa isolate has been performed through laboratory experiments (yes) or has been inferred from e.g. online databases (no).,,m,text(400),yesno
+265,resinforeftypeprov,the reference type assigned to the isolate by the data provider.,,m,text(50),0
+266,resllwr,lower limit of the working range expressed in the unit specified by the element ‘result unit’.,,m,"number(20,10)",0
+267,resrefidbaseattachmentid,"if the result is a complex structure, the base term contains the identification of the attachment containing the complex structure (e.g, in the molecular typing data collection, the attachment coluld be an image comprising the pfge profile of the isolate)",,m,text(100),0
+268,resrefidlaneref,"in case the attachment is an image of the pfge profile of the isolate, the laneref facet identifies the lane within the image regarding the isolate the result refers to.",,m,text(5),0
+269,sampeventinfobirthinflockherd,if the confirmed case was born in the flock/herd from which the samples/animals are collected/sampled.,,s,catalogue(400),yesno
+270,sampeventinfobirthmonth,month of birth of the animal.,,s,number(2),0
+271,sampeventinfobirthyear,year of birth of the animal.,,s,number(4),0
+272,sampeventinfomedicstatus,medication status of the animal or flock/herd with reference to the last two weeks.,,s,text(400),param
+273,sampeventinfostatusherd,status of holding/herd regarding infection.,,s,text(400),sustat
+274,sampeventinfotrigresid,"link to the the original analytical results (expressed with their resids), i.e. the id of one or more non compliant results originating a follow-up sampling event.",,s,text(100),0
+275,sampeventinfovaccstatus,status of animal or flock/herd regarding vaccination.,,s,text(400),yesno
