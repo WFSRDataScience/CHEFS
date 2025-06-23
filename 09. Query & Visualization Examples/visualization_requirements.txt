@@ -1,0 +1,6 @@
+d3blocks==1.4.11
+matplotlib==3.9.1
+numpy==1.26.4
+seaborn==0.13.2
+XlsxWriter==3.2.3
+ipython

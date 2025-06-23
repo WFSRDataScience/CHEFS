@@ -12,6 +12,7 @@ This respository contains everything required to create a local version of the C
 -   06. Meta data : Folder that stores some meta information in Excel files (needed for some of the scripts in 01. Scripts)
 -   07. Data Files : destination folder for downloaded data files
 -   08. EFSA Catalogues/version v9 : All EFSA catalogues (needed for some scripts in the 01. Scripts)
+-   09. Query & Visualization Examples : Collection of python notebooks that include example SQL queries and visualizations from the article. See the README.md inside for more information
 -   README.md
 -   requirements.txt 
 
