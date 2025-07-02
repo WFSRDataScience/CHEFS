@@ -1,62 +1,3 @@
-CREATE TEMPORARY TABLE tmp_amr(
-	id SERIAL PRIMARY KEY,
-	resultcode varchar not null,
-	repyear numeric ,
-	zoonosisst numeric ,
-	zoonosist numeric ,
-	zoonosiscc numeric ,
-	zoonosis_id numeric,
-	cc numeric ,
-	st numeric ,
-	t numeric ,
-	matrix_id numeric,
-	totunitstested numeric ,
-	totunitspositive numeric ,
-	totsampunitstested numeric ,
-	totsampunitspositive numeric ,
-	sampunittype_id numeric,
-	sampstage_id numeric,
-	samporig_id varchar ,
-	samptype_id numeric,
-	sampcontext_id numeric,
-	sampler_id numeric,
-	progcode varchar ,
-	progcode_code varchar ,
-	progsampstrategy_id numeric,
-	seqd numeric ,
-	labisolcode varchar ,
-	seqm numeric ,
-	labtotisol numeric ,
-	sampy numeric ,
-	sampm numeric ,
-	sampd numeric ,
-	isoly numeric ,
-	isolm numeric ,
-	isold numeric ,
-	analysisy numeric ,
-	analysism numeric ,
-	analysisd numeric ,
-	anmethcode_id numeric,
-	substance_id numeric,
-	lowest_id numeric,
-	highest_id numeric,
-	mic_id numeric,
-	cutoffvalue numeric ,
-	esbl_code varchar ,
-	ampc_code varchar ,
-	carbapenem_code numeric,
-	syntestcaz varchar ,
-	syntestctx varchar ,
-	syntestfep varchar ,
-	percc varchar ,
-	permlst varchar ,
-	seqtech_code numeric,
-	seqy numeric ,
-	tracescode_code numeric,
-	filename varchar,
-	UNIQUE(filename, resultcode)
-);
-
 
 DROP TABLE IF EXISTS efsa.amr;
 CREATE TABLE efsa.amr(
@@ -118,8 +59,6 @@ CREATE TABLE efsa.amr(
 	UNIQUE(filename, resultcode)
 );
 
--- insert values
-INSERT INTO efsa.amr SELECT * FROM tmp_amr;
 
 -- VIEW
 CREATE OR REPLACE VIEW efsa.vw_amr AS
@@ -244,3 +183,14 @@ LEFT OUTER JOIN ontologies_efsa.instrum i1
 LEFT OUTER JOIN ontologies_efsa.zoo_cat_traces zct1
 	ON a.tracescode_code = zct1.id
 ;
+
+
+DROP TABLE IF EXISTS efsa.tmp_files;
+CREATE TABLE efsa.tmp_files (
+	filename VARCHAR NOT NULL UNIQUE,
+	filetype VARCHAR NOT NULL,
+	year INT NOT NULL,
+	country_code VARCHAR NOT NULL,
+	nr_cols INTEGER NOT NULL,
+	nr_rows INTEGER NOT NULL
+);

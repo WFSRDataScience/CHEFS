@@ -1,38 +1,35 @@
-# -*- coding: utf-8 -*-
 """
-Created on Mon Aug 26 06:50:03 2024
-
-@author: hoend008
+Take all csv raw data files and create one dataframe
+Save that dataframe to a csv
 """
-
-
 import pandas as pd
 import numpy as np
 import pathlib
-
-import sys
 import os
+from utils import df_trim, df_tolower, cleancolumns
 
-import seaborn as sns 
-import matplotlib.pyplot as plt
 
-sys.path.insert(1, 'W:/WFSR/Projects/72250_Statistics_NP_Feed/11. Libs')
-from WH_data_wrangling_functions import cleancolumns, df_tolower, df_trim
-from PostgresDatabasev2 import PostgresDatabase
+"""
+SETTINGS
+"""
+import warnings
+warnings.filterwarnings('ignore')
 
 
 """
 GLOBALS
 """
-# set output path
-WORKDIR = pathlib.Path("C:/Users/hoend008/HOLIFOOD")
+WORKDIR = "../../"
 
-METAFILEPATH = pathlib.Path(WORKDIR, "column-meta-info-microbiological.xlsx")
+FULLPATH_MAIN_DIR = os.getcwd()
+FULLPATH_MAIN_DIR = os.path.abspath(os.path.join(FULLPATH_MAIN_DIR ,"../.."))
+
+META_DATA_DIR = pathlib.Path(WORKDIR, "06. Meta data")
+FILE_DATA_DIR = pathlib.Path(WORKDIR, "07. Data Files")
+
+METAFILEPATH = pathlib.Path(META_DATA_DIR, "column-meta-info-microbiological.xlsx")
 
 SAVEPATH = pathlib.Path(WORKDIR, "03. AMR data/amr_v1.csv")
-
-DB_USER = os.environ.get('DB_USER')
-DB_PASSWORD = os.environ.get('DB_PASSWORD')
 
 
 """
@@ -78,7 +75,7 @@ CREATE ONE DATAFRAME
 """
 list_dfs = []
 # get all zip files with 'amr' in the filename
-for csvfile in list(WORKDIR.rglob("*AMR_PUB*.csv")):
+for csvfile in list(pathlib.Path(FULLPATH_MAIN_DIR).rglob("*AMR_PUB*.csv")):
     
     print(csvfile)
     
@@ -108,34 +105,6 @@ for csvfile in list(WORKDIR.rglob("*AMR_PUB*.csv")):
     
 # create one dataframe
 df = pd.concat(list_dfs)
-
-
-"""
-ANALYZE MISSINGS AND CREATE HEATMAP
-"""
-# calculate missings over df
-df_missings = df.isna().sum().reset_index().rename(columns={0:"n", "index": "columnname"})
-df_missings['perc'] = df_missings['n'] / df.shape[0]  
-
-# calculate missing per file in df
-list_missings = []
-listFiles = set(df.filename)
-for file in listFiles:
-    tmp_df = df.query("filename == @file")
-    # calculate missings and append to list_missings
-    tmp_df_missings = tmp_df.isna().sum().reset_index().rename(columns={0:"n", "index": "columnname"})
-    tmp_df_missings['perc'] = tmp_df_missings['n'] / tmp_df.shape[0]
-    tmp_df_missings['filename'] = file
-    tmp_df_missings['fileYear'] = int(''.join([str(i) for i in file if i.isdigit()]))
-    list_missings.append(tmp_df_missings)
-    
-df_missings_perfile = pd.concat(list_missings)
-
-# draw heatmap
-df_heatmap = df_missings_perfile.pivot(index=["fileYear", "filename"], columns="columnname", values="perc")
-df_heatmap = df_heatmap.sort_values(by=['fileYear'])
-sns.heatmap(df_heatmap)
-plt.show() 
 
 
 """

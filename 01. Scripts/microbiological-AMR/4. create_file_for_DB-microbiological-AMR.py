@@ -1,39 +1,43 @@
-# -*- coding: utf-8 -*-
 """
-Created on Sat Aug 31 06:52:32 2024
-
-@author: hoend008
+Create csv ready for import into db
 """
 
 import pandas as pd
 import numpy as np
 import pathlib
-
-import sys
 import os
+from utils import cleancolumns, df_tolower, df_trim
+from DBconnection import PostgresDatabase
+from DBcredentials import DB_USER, DB_PASSWORD, DB_NAME, HOST
 
-import seaborn as sns 
-import matplotlib.pyplot as plt
 
-sys.path.insert(1, 'W:/WFSR/Projects/72250_Statistics_NP_Feed/11. Libs')
-from WH_data_wrangling_functions import cleancolumns, df_tolower, df_trim
-from PostgresDatabasev2 import PostgresDatabase
+"""
+SETTINGS
+"""
+import warnings
+warnings.filterwarnings('ignore')
 
 
 """
 GLOBALS
 """
-# set output path
-WORKDIR = pathlib.Path("C:/Users/hoend008/HOLIFOOD")
+WORKDIR = "../../"
 
-AMRPATH = pathlib.Path(WORKDIR, "03. AMR data/amr_v1.csv")
+FULLPATH_MAIN_DIR = os.getcwd()
+FULLPATH_MAIN_DIR = os.path.abspath(os.path.join(FULLPATH_MAIN_DIR ,"../.."))
 
-METAFILEPATH = pathlib.Path(WORKDIR, "column-meta-info-microbiological.xlsx")
+AMR_DATA_DIR = pathlib.Path(WORKDIR, "03. AMR data")
+META_DATA_DIR = pathlib.Path(WORKDIR, "06. Meta data")
 
-SAVEPATH = pathlib.Path(WORKDIR, "03. AMR data/AMR_for_db.csv")
+AMRPATH = pathlib.Path(AMR_DATA_DIR, "amr_v1.csv")
 
-DB_USER = os.environ.get('DB_USER')
-DB_PASSWORD = os.environ.get('DB_PASSWORD')
+METAFILEPATH = pathlib.Path(META_DATA_DIR, "column-meta-info-microbiological.xlsx")
+
+SAVEFILENAME = "AMR_for_db.csv"
+SAVEPATH = pathlib.Path(AMR_DATA_DIR, SAVEFILENAME)
+
+FILENAME_FILES_SAVE =  "copyqueries_amr.txt"
+FILEPATH_COPYQUERIES_FILES = pathlib.Path(AMR_DATA_DIR, FILENAME_FILES_SAVE)
 
 
 """
@@ -91,7 +95,7 @@ for i, row in df_meta.query("catalogue == catalogue").iterrows():
     print(col, " ", cat)
 
     # get db data
-    with PostgresDatabase('owfsr', DB_USER, DB_PASSWORD) as db:
+    with PostgresDatabase(DB_NAME, DB_USER, DB_PASSWORD, HOST) as db:
         dfdb = db.querydf(f"SELECT id, termcode FROM ontologies_efsa.{cat.lower()};")
         
     # replace values in col for dfdb
@@ -124,26 +128,19 @@ df = df[COLUMNS_ORDERED]
 
 
 """
-GET DATABASE Tbl QUERY
-"""
-# for col in df.columns:
-#     r = df_meta.query("columnname_db == @col")['sql'].reset_index()
-#     print(str(r.sql[0]))
-    
-    
-"""
 SAVE AS CSV
 """
 df.to_csv(SAVEPATH, index=False)
 
 
 """
-PRINT COPY QUERY
+SAVE COPY QUERY
 """
-copy_query = f"\copy tmp_amr({','.join(df.columns)}) from '{SAVEPATH}' (header true, delimiter ',', format csv, encoding 'UTF-8');"
-print(copy_query)
-    
+# construct save Path
+full_sample_dir_path = pathlib.Path(FULLPATH_MAIN_DIR, "03. AMR data")
+full_sample_file_path = pathlib.Path(full_sample_dir_path, SAVEFILENAME) 
 
-#"""
-#\copy efsa.amr(seqtech_name,labtotisol,esbl_code,highest_code,matrix_code,syntestfep,sampcontext_code,syntestctx,permlst,totunitstested,analysism,progcode,totunitspositive,seqd,sampler_code,sampstage_code,syntestcaz,analysisd,seqtech_code,isolm,samporig_code,zoonosiscc,cc,percc,progsampstrategy_code,totsampunitstested,lowest_code,repyear,sampd,sampy,ampc_name,tracescode_code,zoonosis_code,progcode_code,mic_code,seqy,zoonosist,t,sampunittype_code,isoly,resultcode,samptype_code,totsampunitspositive,isold,zoonosisst,tracescode_name,anmethcode_code,cutoffvalue,repcountry_code,st,substance_code,labisolcode,sampm,seqm,ampc_code,analysisy,carbapenem_code) from 'C:\Users\hoend008\HOLIFOOD\03. AMR data\AMR_for_db.csv' (header true, delimiter ',', format csv, encoding 'UTF-8');
-#"""
+# create copy query
+copy_query = f"\copy tmp_amr({','.join(df.columns)}) from '{full_sample_file_path}' (header true, delimiter ',', format csv, encoding 'UTF-8');"
+with open(FILEPATH_COPYQUERIES_FILES, 'a') as f:
+    f.write(copy_query + "\n")   
