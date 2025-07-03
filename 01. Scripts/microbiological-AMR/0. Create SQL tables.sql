@@ -1,13 +1,25 @@
+DROP TABLE IF EXISTS efsa.tmp_files;
+CREATE TABLE efsa.tmp_files (
+	filename VARCHAR NOT NULL UNIQUE,
+	filetype VARCHAR NOT NULL,
+	year INT NOT NULL,
+	country_code VARCHAR NOT NULL,
+	nr_cols INTEGER NOT NULL,
+	nr_rows INTEGER NOT NULL
+);
 
+
+DROP VIEW IF EXISTS efsa.vw_amr;
 DROP TABLE IF EXISTS efsa.amr;
 CREATE TABLE efsa.amr(
 	id SERIAL PRIMARY KEY,
 	resultcode varchar not null,
 	repyear integer ,
-	zoonosisst integer ,
-	zoonosist integer ,
+	repcountry_id integer references ontologies_efsa.country(id),
 	zoonosiscc integer ,
+	zoonosisst integer ,
 	zoonosis_id integer REFERENCES ontologies_efsa.PARAM(id),
+	zoonosist integer ,
 	cc integer ,
 	st integer ,
 	t integer ,
@@ -22,11 +34,11 @@ CREATE TABLE efsa.amr(
 	samptype_id integer REFERENCES ontologies_efsa.ZOO_CAT_SMPTYP(id),
 	sampcontext_id integer REFERENCES ontologies_efsa.PRGTYP(id),
 	sampler_id integer REFERENCES ontologies_efsa.SAMPLR(id),
-	progcode varchar ,
 	progcode_code varchar ,
+	progcode varchar ,
 	progsampstrategy_id integer REFERENCES ontologies_efsa.SAMPSTR(id),
-	seqd integer ,
 	labisolcode varchar ,
+	seqd integer ,
 	seqm integer ,
 	labtotisol integer ,
 	sampy integer ,
@@ -46,7 +58,7 @@ CREATE TABLE efsa.amr(
 	cutoffvalue integer ,
 	esbl_code varchar ,
 	ampc_code varchar ,
-	carbapenem_code integer REFERENCES ontologies_efsa.PARAM(id),
+	carbapenem_code varchar,
 	syntestcaz varchar ,
 	syntestctx varchar ,
 	syntestfep varchar ,
@@ -133,9 +145,7 @@ SELECT
 	cutoffvalue ,
 	esbl_code ,
 	ampc_code ,
-	carbapenem_code AS carbapenem_id,
-	p3.termcode AS carbapenem_code,
-	p3.termextendedname AS carbapenem_name,
+	carbapenem_code,
 	syntestcaz ,
 	syntestctx ,
 	syntestfep ,
@@ -176,8 +186,6 @@ LEFT OUTER JOIN ontologies_efsa.zoo_cat_fixmeas zcf2
 	ON a.highest_id = zcf2.id
 LEFT OUTER JOIN ontologies_efsa.zoo_cat_fixmeas zcf3
 	ON a.mic_id = zcf3.id
-LEFT OUTER JOIN ontologies_efsa.param p3
-	ON a.carbapenem_code = p3.id
 LEFT OUTER JOIN ontologies_efsa.instrum i1
 	ON a.seqtech_code = i1.id
 LEFT OUTER JOIN ontologies_efsa.zoo_cat_traces zct1
@@ -185,12 +193,3 @@ LEFT OUTER JOIN ontologies_efsa.zoo_cat_traces zct1
 ;
 
 
-DROP TABLE IF EXISTS efsa.tmp_files;
-CREATE TABLE efsa.tmp_files (
-	filename VARCHAR NOT NULL UNIQUE,
-	filetype VARCHAR NOT NULL,
-	year INT NOT NULL,
-	country_code VARCHAR NOT NULL,
-	nr_cols INTEGER NOT NULL,
-	nr_rows INTEGER NOT NULL
-);

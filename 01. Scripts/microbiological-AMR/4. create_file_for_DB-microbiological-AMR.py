@@ -56,7 +56,7 @@ GET AMR DATA
 """
 df = pd.read_csv(AMRPATH)
 
-df_meta = pd.read_excel(METAFILEPATH)
+df_meta = pd.read_excel(METAFILEPATH, sheet_name="meta-data")
 
 
 """
