@@ -2,7 +2,7 @@
 
 ## About this repository
 
-This respository contains everything required to create a local version of the CHEFS database, further discussed in the accompanying article: "Trends from 300 million European food safety monitoring measurements: the CompreHensive European Food Safety (CHEFS) Database". The repository is structured as follows:
+This respository contains everything required to create a local version of the CHEFS database, further discussed in the accompanying article: "Food safety monitoring trends across Europe: insights from the 392-million-entry CompreHensive European Food Safety (CHEFS) database". The repository is structured as follows:
 
 -   01. Scripts : collection of scripts for database setup, data download and data processing
 -   02. Prevalence Data : Folder to store microbiological Prevalence data (empty for now) 
@@ -15,6 +15,10 @@ This respository contains everything required to create a local version of the C
 -   09. Query & Visualization Examples : Collection of python notebooks that include example SQL queries and visualizations from the article. See the README.md inside for more information
 -   README.md
 -   requirements.txt 
+
+If you find this useful and use our code or database, please cite our paper:
+>Nehir Kizililsoley*, Floor van Meer, PhD*, Osman Mutlu, Wouter Hoenderdaal, Rosan Hobé, Wenjuan Mu, PhD, Arjen Gerssen, PhD, HJ van der Fels-Klerx, PhD, Ákos Jóźwiak, PhD, Ioannis Manikas, PhD, Ali Hurriyetoglu, PhD, Bas van der Velden, PhD. Food safety monitoring trends across Europe: insights from the 392-million-entry CompreHensive European Food Safety (CHEFS) database, arxiv.
+
 
 ## How to get started?
 
@@ -115,7 +119,3 @@ After all data processing is done, you can rely on the following views (and thei
 - efsa.vw_sample_measurement_core
 
 Note that the database is not yet optimized for fast performance. Some steps, e.g. partitioning is implemented to facilitate faster query speed, but feel free to implement additional indexes and other things to boost performance. Because these things can be very specific to what type of queries you are running, we leave it up to you to make decisions regarding performance optimization.
-
-
-## Authors and acknowledgment
-Rosan Hobe, Wouter Hoenderdaal
