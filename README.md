@@ -21,6 +21,7 @@ This respository contains everything required to create a local version of the C
 If you find this useful and use our code or database, please cite our paper:
 >Nehir Kizililsoley*, Floor van Meer, PhD*, Osman Mutlu, Wouter Hoenderdaal, Rosan Hobé, Wenjuan Mu, PhD, Arjen Gerssen, PhD, HJ van der Fels-Klerx, PhD, Ákos Jóźwiak, PhD, Ioannis Manikas, PhD, Ali Hurriyetoglu, PhD, Bas van der Velden, PhD. Food safety monitoring trends across Europe: insights from the 392-million-entry CompreHensive European Food Safety (CHEFS) database, arxiv.
 
+![](CHEFS_paper_Fig1.png)
 
 ## How to get started?
 
