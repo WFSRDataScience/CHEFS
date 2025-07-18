@@ -1,5 +1,7 @@
 # CHEFS
 
+![](chefs_welcome.png)
+
 ## About this repository
 
 This respository contains everything required to create a local version of the CHEFS database, further discussed in the accompanying article: "Food safety monitoring trends across Europe: insights from the 392-million-entry CompreHensive European Food Safety (CHEFS) database". The repository is structured as follows:
