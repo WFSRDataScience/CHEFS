@@ -4,7 +4,11 @@
 
 ## About this repository
 
-This respository contains everything required to create a local version of the CHEFS database, further discussed in the accompanying article: "Food safety monitoring trends across Europe: insights from the 392-million-entry CompreHensive European Food Safety (CHEFS) database". The repository is structured as follows:
+This respository contains everything required to create a local version of the CHEFS database, further discussed in the accompanying article: "Food safety monitoring trends across Europe: insights from the 392-million-entry CompreHensive European Food Safety (CHEFS) database". 
+
+**Disclaimer: Although we made every effort to ensure the validity of the CHEFS database, we are not responsible for any conclusions that third parties might draw.**
+
+The repository is structured as follows:
 
 -   01. Scripts : collection of scripts for database setup, data download and data processing
 -   02. Prevalence Data : Folder to store microbiological Prevalence data (empty for now) 
