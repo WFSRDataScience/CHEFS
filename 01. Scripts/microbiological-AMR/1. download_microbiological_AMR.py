@@ -30,7 +30,7 @@ FILEPATH_URL_FILE = pathlib.Path(META_DATA_DIR, "zenodo url file.xlsx")
 """
 READ URL FILE
 """
-df = pd.read_excel(FILEPATH_URL_FILE, sheet_name="microbiological")
+df = pd.read_excel(FILEPATH_URL_FILE, sheet_name="microbiological-AMR")
 
 df_countries = df.countrycode.value_counts().reset_index()
 
@@ -90,7 +90,6 @@ for DIR in DIRECTORIES:
 			with open(pathZipfile, "wb") as fd:
 				fd.write(r.content)
 			
-			print(pathZipfile)
 			# unzip downloaded file
 			with ZipFile(pathZipfile, 'r') as zObject:
 		    
