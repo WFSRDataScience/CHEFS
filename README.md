@@ -24,7 +24,18 @@ The repository is structured as follows:
 
 If you find this useful and use our code or database, please cite our paper:
 
-> Nehir Kizililsoley*, Floor van Meer, PhD*, Osman Mutlu, Wouter Hoenderdaal, Rosan Hobé, Wenjuan Mu, PhD, Arjen Gerssen, PhD, HJ van der Fels-Klerx, PhD, Ákos Jóźwiak, PhD, Ioannis Manikas, PhD, Ali Hurriyetoglu, PhD, Bas van der Velden, PhD. Food safety monitoring trends across Europe: insights from the 392-million-entry CompreHensive European Food Safety (CHEFS) database, arxiv.
+> Kizililsoley, Nehir, et al. "Food safety trends across Europe: insights from the 392-million-entry CompreHensive European Food Safety (CHEFS) database." *arXiv preprint arXiv:2507.13802* (2025).
+
+Or use the bibtex: 
+
+```
+@article{kizililsoley2025food,
+  title={Food safety trends across Europe: insights from the 392-million-entry CompreHensive European Food Safety (CHEFS) database},
+  author={Kizililsoley, Nehir and van Meer, Floor and Mutlu, Osman and Hoenderdaal, Wouter F and Hob{\'e}, Rosan G and Mu, Wenjuan and Gerssen, Arjen and van der Fels-Klerx, HJ and J{\'o}{\'z}wiak, {\'A}kos and Manikas, Ioannis and others},
+  journal={arXiv preprint arXiv:2507.13802},
+  year={2025}
+}
+```
 
 ![](CHEFS_paper_Fig1.png)
 
