@@ -56,7 +56,6 @@ GET ALL DIRECTORIES OF COUNTRIES IN WORKDIR
 DIRECTORIES = [{'country': dI, 'path': pathlib.Path(FILE_DATA_DIR,dI)} for dI in os.listdir(FILE_DATA_DIR) if os.path.isdir(os.path.join(FILE_DATA_DIR,dI))]   
 DIRECTORIES = [x for x in DIRECTORIES if len(x['country']) == 2]
 
-
 """
 LOOP OVER DIRECTORIES, DOWNLOAD FILES, STORE IN FOLDER AND UNZIP
 """
