@@ -24,16 +24,19 @@ The repository is structured as follows:
 
 If you find this useful and use our code or database, please cite our paper:
 
-> Kizililsoley, Nehir, et al. "Food safety trends across Europe: insights from the 392-million-entry CompreHensive European Food Safety (CHEFS) database." *arXiv preprint arXiv:2507.13802* (2025).
+> Kızılilsoley, Nehir, et al. "Food safety trends across Europe: insights from the 392-million-entry CompreHensive European Food Safety (CHEFS) database." *Food Control* 182 (2026): 111816.
 
 Or use the bibtex: 
 
 ```
-@article{kizililsoley2025food,
+@article{kizililsoley2026food,
   title={Food safety trends across Europe: insights from the 392-million-entry CompreHensive European Food Safety (CHEFS) database},
-  author={Kizililsoley, Nehir and van Meer, Floor and Mutlu, Osman and Hoenderdaal, Wouter F and Hob{\'e}, Rosan G and Mu, Wenjuan and Gerssen, Arjen and van der Fels-Klerx, HJ and J{\'o}{\'z}wiak, {\'A}kos and Manikas, Ioannis and others},
-  journal={arXiv preprint arXiv:2507.13802},
-  year={2025}
+  author={K{\i}z{\i}lilsoley, Nehir and van Meer, Floor and Mutlu, Osman and Hoenderdaal, Wouter and Hob{\'e}, Rosan and Mu, Wenjuan and Gerssen, Arjen and van der Fels-Klerx, HJ and J{\'o}{\'z}wiak, {\'A}kos and Manikas, Ioannis and others},
+  journal={Food Control},
+  volume={182},
+  pages={111816},
+  year={2026},
+  publisher={Elsevier}
 }
 ```
 
