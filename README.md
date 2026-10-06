@@ -22,9 +22,10 @@ The repository is structured as follows:
 - README.md
 - requirements.txt
 
-If you find this useful and use our code or database, please cite our paper:
+If you find this useful and use our code or database, please cite our paper and the repository:
 
 > Kızılilsoley, Nehir, et al. "Food safety trends across Europe: insights from the 392-million-entry CompreHensive European Food Safety (CHEFS) database." *Food Control* 182 (2026): 111816.
+> https://github.com/WFSRDataScience/CHEFS
 
 Or use the bibtex: 
 
