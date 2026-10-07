@@ -26,7 +26,34 @@ If you find this useful and use our code or database, please cite our paper and 
 
 > Kızılilsoley, Nehir, et al. "Food safety trends across Europe: insights from the 392-million-entry CompreHensive European Food Safety (CHEFS) database." *Food Control* 182 (2026): 111816.
 
-> https://github.com/WFSRDataScience/CHEFS
+```yaml
+cff-version: 1.2.0
+title: CHEFS Database
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - orcid: 'https://orcid.org/0000-0001-7685-7041'
+identifiers:
+  - type: other
+    value: 'https://github.com/WFSRDataScience/CHEFS'
+    description: GitHub repository
+repository-code: 'https://github.com/WFSRDataScience/CHEFS'
+url: 'https://chefs.wur.nl/'
+abstract: >-
+  This repository contains everything required to create a
+  local version of the CHEFS database, further discussed in
+  the accompanying article: "Food safety monitoring trends
+  across Europe: insights from the 392-million-entry
+  CompreHensive European Food Safety (CHEFS) database".
+keywords:
+  - CHEFS
+  - Food safety
+  - Monitoring data
+license: MIT
+```
+
 
 Or use the bibtex: 
 
