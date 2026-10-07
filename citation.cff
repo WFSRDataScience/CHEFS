@@ -1,0 +1,28 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: CHEFS Database
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - orcid: 'https://orcid.org/0000-0001-7685-7041'
+identifiers:
+  - type: other
+    value: 'https://github.com/WFSRDataScience/CHEFS'
+    description: github repo
+repository-code: 'https://github.com/WFSRDataScience/CHEFS'
+url: 'https://chefs.wur.nl/'
+abstract: >-
+  This respository contains everything required to create a
+  local version of the CHEFS database, further discussed in
+  the accompanying article: "Food safety monitoring trends
+  across Europe: insights from the 392-million-entry
+  CompreHensive European Food Safety (CHEFS) database".
+keywords:
+  - CHEFS
+  - Food safety
+  - Monitoring data
+license: MIT
